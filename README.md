@@ -1,60 +1,21 @@
-# p5.js Template
+# Final Project
 
-This is a README file that can be used to describe and document your assignment.
+## Milestone 1 - Due 11/29/23
 
-Markdown Cheatsheet (from [https://www.markdownguide.org/cheat-sheet/](https://www.markdownguide.org/cheat-sheet/)):
+### Idea 1: DJ Table
 
----
----
+I thought that creating an interactive DJ table would be a great way to combine the use of the Arduino, the audio library, and what I have learned in class so far. The image below shows my idea for the table setup, with two spinning records that each can play a different song. I would like to incorporate the Arduino board by having two buttons which can record scratch songs upon being clicked, and switch songs upon being pressed for about 5 seconds. Each button coordinates to a record. When the record is scratched, the records should spin back some and the song should also rewing a bit if possible. I would also like to incorporate some other features such as volume and speed control with sliders, a button that plays an 808 beat when clicked, and a audio visualizer. 
+ 
+![Idea 1: DJ Table](./finalidea3.jpg)
 
-# Heading1
-## Heading2
-### Heading3
-#### Heading4
-##### Heading5
-###### Heading6
+### Idea 2: Tree Decoration and Santa Claus Wack-a-Mole
 
-**bold text**
+This idea consists of two games combined. One game is decorating a Christmas tree with bulbs and garland. The garland would be applied via dragging of the mouse while the bulbs would be randomly placed with the click of a button on the Arduino. I also had an idea to possiibly have LEDs light up on the board that correspond to the lights drawn in the picture below. The Santa game would be a Santa head which pops up randomly on the screen, and the user would have to click his face to score a point.
+ 
+![Idea 2: Christmas Game](./finalidea1.jpg)
 
-*italicized text*
-
-~~strikethrough text~~
-
-Ordered List:
-1. First item
-2. Second item
-3. Third item
-
-Unordered List:
-- First item
-- Second item
-- Third item
-
-`short code block`
-
-```
-extended code block
-fun() {
-  return 0
-}
-```
-
-Link:  
-[linked text](https://www.example.com)
+### Idea 3: Subway Game
 
 
-Image with url:  
-![image description](https://dm-gy-6063-2023f-d.github.io/assets/homework/02/clark-espaco-modulado-00.jpg)
-
-
-Image on repo:  
-![image description](./file-name.jpg)
-
-
-To start a new line, add two spaces at the end of a line, like this:  
-this is a new line.
-
-
-To start a new paragraph, leave an empty line between two lines of text.
-
-This is a new paragraph.
+ 
+![Idea 2: Christmas Game](./finalidea2.jpg)
