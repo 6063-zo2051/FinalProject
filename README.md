@@ -16,6 +16,6 @@ This idea consists of two games combined. One game is decorating a Christmas tre
 
 ### Idea 3: Subway Game
 
-
+This iddea is a game that challenges the palyer to cross the subway by jumping from car to car. The user can only enter and exit cars through the doors as shown in the image. The cars move across the screen and appear in random order on their tracks. When the player is on the car, their avatar will be shown moving with the train. I am not yet sure how I would like the avatar to look. There is also a feature where the user can ride a rat. I would like for the rat to also move across the screen at random points. Once the player reaches the other side of the racks, possibly a screen with a trophy or reward could popup. I would like to incorporate the Arduino by having 4 buttons that move the avatar forward, back, left, or right upon being clicked.
  
 ![Idea 2: Christmas Game](./finalidea2.JPG)
