@@ -19,3 +19,13 @@ This idea consists of two games combined. One game is decorating a Christmas tre
 This iddea is a game that challenges the palyer to cross the subway by jumping from car to car. The user can only enter and exit cars through the doors as shown in the image. The cars move across the screen and appear in random order on their tracks. When the player is on the car, their avatar will be shown moving with the train. I am not yet sure how I would like the avatar to look. There is also a feature where the user can ride a rat. I would like for the rat to also move across the screen at random points. Once the player reaches the other side of the racks, possibly a screen with a trophy or reward could popup. I would like to incorporate the Arduino by having 4 buttons that move the avatar forward, back, left, or right upon being clicked.
  
 ![Idea 2: Christmas Game](./finalidea2.JPG)
+
+## Milestone 2 - Due 12/06/23
+
+### 
+
+### User Testing
+After Milestone 3, I plan to get feedback from my classmates and friends on how easy the system is to use and on what features could be added or removed. I could do this via a survey more specifically, where users could have the link for interaction with the system and give feedback. Considering user feedback gave me the idea to include some sort of instruction for users on what keys to press on the keypad and Arduino board.
+
+### Relevance to Society
+A recent reading assignment for this course revolved around the topic of media archaeology. I think that this project is very relevent to the subject. Media archaeology shows how technology and media has shaped our society over time. Old school DJ sets took up space and storage. They covered entire tabletops. Nowadays, we can achieve all and more within softwares such as GarageBand and games such as what I have chosen to create for my project. 
