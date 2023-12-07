@@ -27,7 +27,9 @@ I would also like to add a potentiometer to my Arduino board which can control t
 #### Finite State Machines
  ![Finite State Machine for Pause and Play Buttons](./fsmbuttons.png)
 
-This finite state machine shows the simple cycle between two states for when audio is playing and when audio is paused.
+This finite state machine shows the simple cycle between two states for when audio is playing and when audio is paused. The circuit diagram is also shown.
+
+![Circuit Diagram for Pause and Play Buttons](./circbuttons.png)
 
 #### User Testing
 After Milestone 3, I plan to get feedback from my classmates and friends on how easy the system is to use and on what features could be added or removed. I could do this via a survey more specifically, where users could have the link for interaction with the system and give feedback. Considering user feedback gave me the idea to include some sort of instruction for users on what keys to press on the keypad and Arduino board.
