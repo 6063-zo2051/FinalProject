@@ -20,9 +20,7 @@ This iddea is a game that challenges the palyer to cross the subway by jumping f
 
 I decided to go with Idea 1 for my project as I felt like the DJ Table would allow for lots of creativity and fun features to be added. I can start simple and build on that foundation to achieve cooler features along the way. First, I wanted to focus on the Arduino board logic and getting it to control features within my p5js code. The goal of the Arduino board thus far in my project is to have a button that when pressed, pauses the current song that is playing. There will be a second button that plays the current song again. 
 
-So far, I have been having ahard time with the ports of my Arduino. I have to press down on my wires to get it to read the values from my buttons.
-
-I would also like to add a potentiometer to my Arduino board which can control the volume of the audio. This can be added once all other required components of the project are complete.
+So far, I have been having a hard time with the ports of my Arduino. I have to press down on my wires to get it to read the values from my buttons.
 
 #### Finite State Machines
  ![Finite State Machine for Pause and Play Buttons](./fsmbuttons.png)
@@ -32,8 +30,10 @@ This finite state machine shows the simple cycle between two states for when aud
 ![Circuit Diagram for Pause and Play Buttons](./circbuttons.png)
 
 #### External Data and Library
-
 I intend on using the p5 sound library heavily for this project. I will at minimum be loading the audios following the setup for our Homework 8 assignment, but I would laos like to use some other calls to add detail to my project. I would like to potentially use a call to create the moving sound bar which fluctuates with the audio as it is playing. I am also interested in using the reverb calls to add another option for song adjustment besides just volume control.
+
+### Output Component
+I would like to have a light apear on my board when music is playing versus paused. This is a almost to give an "ON AIR" effect to the DJ set.
 
 #### User Testing
 After Milestone 3, I plan to get feedback from my classmates and friends on how easy the system is to use and on what features could be added or removed. I could do this via a survey more specifically, where users could have the link for interaction with the system and give feedback. Considering user feedback gave me the idea to include some sort of instruction for users on what keys to press on the keypad and Arduino board.
