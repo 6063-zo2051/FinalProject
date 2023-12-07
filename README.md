@@ -18,9 +18,9 @@ This iddea is a game that challenges the palyer to cross the subway by jumping f
 
 ### Milestone 2 - Due 12/06/23
 
-I decided to go with Idea 1 for my project as I felt like the DJ Table would allow for lots of creativity and fun features to be added. I can start simple and build on that foundation to achieve cooler features along the way. First, I wanted to focus on the Arduino board logic and getting it to control features within my p5js code. The goal of the Arduino board thus far in my project is to have a button that when pressed, pauses the current song that is playing. There will be a second button that plays the current song again. Below is a circuit diagram of the board with the button features.
+I decided to go with Idea 1 for my project as I felt like the DJ Table would allow for lots of creativity and fun features to be added. I can start simple and build on that foundation to achieve cooler features along the way. First, I wanted to focus on the Arduino board logic and getting it to control features within my p5js code. The goal of the Arduino board thus far in my project is to have a button that when pressed, pauses the current song that is playing. There will be a second button that plays the current song again. 
 
-`
+So far, I have been having ahard time with the ports of my Arduino. I have to press down on my wires to get it to read the values from my buttons.
 
 I would also like to add a potentiometer to my Arduino board which can control the volume of the audio. This can be added once all other required components of the project are complete.
 
