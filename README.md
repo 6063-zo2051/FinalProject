@@ -31,6 +31,10 @@ This finite state machine shows the simple cycle between two states for when aud
 
 ![Circuit Diagram for Pause and Play Buttons](./circbuttons.png)
 
+#### External Data and Library
+
+I intend on using the p5 sound library heavily for this project. I will at minimum be loading the audios following the setup for our Homework 8 assignment, but I would laos like to use some other calls to add detail to my project. I would like to potentially use a call to create the moving sound bar which fluctuates with the audio as it is playing. I am also interested in using the reverb calls to add another option for song adjustment besides just volume control.
+
 #### User Testing
 After Milestone 3, I plan to get feedback from my classmates and friends on how easy the system is to use and on what features could be added or removed. I could do this via a survey more specifically, where users could have the link for interaction with the system and give feedback. Considering user feedback gave me the idea to include some sort of instruction for users on what keys to press on the keypad and Arduino board.
 
