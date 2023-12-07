@@ -14,6 +14,8 @@ function setup() {
 
   let mConnectButton = createButton("Connect to Serial");
   mConnectButton.position(width / 2, height / 2);
+  mConnectButton.size(mConnectButton.width * 3, mConnectButton.height * 3);
+  mConnectButton.style('font-size', '24px');
   mConnectButton.mousePressed(connect);
 }
 
