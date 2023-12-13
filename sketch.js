@@ -1,39 +1,16 @@
-//let mSerial;
+let mSerial;
 
-//let readyToRead;
+let readyToRead;
+let mConnectButton;
 
-//function connect() {
-  //mSerial.open(9600);
-//}
+let isPlaying;
 
-//function setup() {
-  //createCanvas(windowWidth, windowHeight);
-  //mSerial = createSerial();
+let prev = ["0","0"];
 
-  //readyToRead = false;
-
-  //let mConnectButton = createButton("Connect to Serial");
-  //mConnectButton.position(width / 2, height / 2);
-  //mConnectButton.size(mConnectButton.width * 3, mConnectButton.height * 3);
- // mConnectButton.style('font-size', '24px');
-  //mConnectButton.mousePressed(connect);
-//}
-
-//function draw() {
-  //background(0);
-
-  //if (readyToRead) {
-   // mSerial.clear();
-   // mSerial.write(10);
-   // readyToRead = false;
- // }
-
-  //if (mSerial.opened() && mSerial.availableBytes() > 0) {
-   // let mLine = mSerial.readUntil("\n");
-   // print (mLine);
-   // readyToRead = true;
- // }
-//}
+function connect() {
+  mSerial.open(9600);
+  readyToRead = true;
+}
 
 let angle = 0;
 let recordImg;
@@ -42,26 +19,66 @@ function preload() {
 recordImg = loadImage('recordImg.jpg'); // preload images
 chromeImg = loadImage('chromeImg.png');
 
-walkSong = loadSound("./walk.mp3"); // preload music
-watchingSong = loadSound("./watching.mp3");
-flashSong = loadSound("./flashlight.mp3");
+song1 = loadSound("./walk.mp3"); // preload music
+song2 = loadSound("./watching.mp3");
+song3 = loadSound("./flashlight.mp3");
 }
 
 function setup() {
   createCanvas(windowWidth, windowHeight, WEBGL);
   angleMode(DEGREES);
+
+  mSerial = createSerial();
+
+  readyToRead = false;
+  isPlaying = false;
+
+  mConnectButton = createButton("Connect to Serial");
+  mConnectButton.position(width / 2, height / 2);
+  mConnectButton.size(mConnectButton.width * 3, mConnectButton.height * 3);
+  mConnectButton.style('font-size', '24px');
+  mConnectButton.mousePressed(connect);
 }
 
 function draw() {
   background(0);
   
+  if (readyToRead && mSerial.opened()) {
+    mSerial.clear();
+    mSerial.write(10);
+    readyToRead = false;
+  }
+ 
+   if (mSerial.opened() && mSerial.availableBytes() > 0) {
+    let mLine = mSerial.readUntil("\n");
+    mLine = trim(mLine); // removes extra characters
+    let vals = mLine.split(",");
+
+    if (vals[0] == "1" && prev[0] == "0") {
+      // start song
+      isPlaying = true;
+      print("start");
+    }
+
+    if (vals[1] == "1" && prev[1] == "0") {
+      // stop song
+      isPlaying = false;
+      print("stop");
+    }
+
+    prev[0] = vals[0];
+    prev[1] = vals[1];
+
+    readyToRead = true;
+   }
+
   recordSpin();
   recordNeedle();
 
 }
 
 
-function recordSpin() { // ***GETS LARGER WHEN IN FULL SCREEN
+function recordSpin() { 
   let recordX = -width / 5;
   let recordY = 0;
 
@@ -71,22 +88,31 @@ function recordSpin() { // ***GETS LARGER WHEN IN FULL SCREEN
   translate(recordX, recordY);
   rotate(angle);
   texture(recordImg);
-  circle( 0, 0, width / 2);
+  let minDim = min(width, height);
+  circle( 0, 0, minDim / 1.5);
   fill(0);
-  circle(0, 0, 200);
+  circle(0, 0, minDim / 20);
   angle += 1;
   pop();
+
 }
 
-function recordNeedle() {
+function recordNeedle() { // **FIX DIMENSIONS
 texture(chromeImg);
 stroke(255);
 strokeWeight(6);
-circle(width / 10, - height / 5, 200);
+push();
+translate( width / 10, - height / 5);
+
+if (!isPlaying) { // ** MAKE STATEMENT FOR "NOT PLAYING"
+  rotate(-45);
+}
+
+circle(0, 0, 200);
+
 
 stroke(255);
 strokeWeight(20);
-line(width / 10, - height / 5, (width / 10) - 600, (- height / 5) + 600); // ***HOW DO I MAKE THE NEEDLE ROTATE ABOUT THE POINT ON MOUSE CLICK?
-
+line(0, 0, - 600, 600);
+pop();
 }
-
