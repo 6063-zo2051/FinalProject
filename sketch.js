@@ -7,21 +7,29 @@ let isPlaying;
 
 let prev = ["0","0"];
 
+let songs = [];
+let currentSong = 0;
+let currentButton;
+
+let angle = 0;
+let recordImg;
+
 function connect() {
   mSerial.open(9600);
   readyToRead = true;
 }
 
-let angle = 0;
-let recordImg;
 
 function preload() {
 recordImg = loadImage('recordImg.jpg'); // preload images
 chromeImg = loadImage('chromeImg.png');
+skipImg = loadImage('skipbutton.png');
 
-song1 = loadSound("./walk.mp3"); // preload music
-song2 = loadSound("./watching.mp3");
-song3 = loadSound("./flashlight.mp3");
+songs[0] = loadSound("./walk.mp3"); // preload music
+songs[1] = loadSound("./watching.mp3");
+songs[2] = loadSound("./flashlight.mp3");
+
+recordScratch = loadSound("./recordScratch.mp3");
 }
 
 function setup() {
@@ -33,11 +41,32 @@ function setup() {
   readyToRead = false;
   isPlaying = false;
 
+  currentButton = createButton(''); // ***BUTTON COVER IS NOT WORKING
+  currentButton.position(width * 4 / 5, height / 6);
+  currentButton.size(300, 300);
+  currentButton.style('border-radius', '50%');
+  currentButton.style('background-image', 'url(skip.png)');
+  currentButton.style('background-size', 'cover');
+  currentButton.mousePressed(changeSong);
+
   mConnectButton = createButton("Connect to Serial");
   mConnectButton.position(0, 0);
   mConnectButton.size(mConnectButton.width * 3, mConnectButton.height * 3);
   mConnectButton.style('font-size', '24px');
   mConnectButton.mousePressed(connect);
+
+}
+
+function changeSong(){
+  songs[currentSong].stop();
+  recordScratch.play();
+  currentSong++;
+
+  if (currentSong >= songs.length) {
+    currentSong = 0;
+  }
+
+  songs[currentSong].play();
 }
 
 function draw() {
@@ -55,14 +84,14 @@ function draw() {
     let vals = mLine.split(",");
 
     if (vals[0] == "1" && prev[0] == "0") {
-      // start song
+      songs[currentSong].play();
       // turn on green LED
       isPlaying = true;
       print("start");
     }
 
     if (vals[1] == "1" && prev[1] == "0") {
-      // stop song
+      songs[currentSong].stop();
       // turn on red LED
       isPlaying = false;
       print("stop");
