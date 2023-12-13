@@ -23,7 +23,6 @@ function connect() {
 function preload() {
 recordImg = loadImage('recordImg.jpg'); // preload images
 chromeImg = loadImage('chromeImg.png');
-skipImg = loadImage('skipbutton.png');
 
 songs[0] = loadSound("./tainted.mp3"); // preload music
 songs[1] = loadSound("./watching.mp3");
@@ -42,18 +41,20 @@ function setup() {
   readyToRead = false;
   isPlaying = false;
 
-  currentButton = createButton(''); // ***BUTTON COVER IS NOT WORKING
+  currentButton = createButton('');
   currentButton.position(width * 4 / 5, height / 6);
   currentButton.size(300, 300);
   currentButton.style('border-radius', '50%');
-  currentButton.style('background-image', 'url(skip.png)');
+  currentButton.style('border-width', '0');
   currentButton.style('background-size', 'cover');
+  currentButton.style('background-image', 'url(skipbutton.png)');
+  currentButton.style('background-color', 'rgba(0, 0, 0, 0)');
   currentButton.mousePressed(changeSong);
 
   mConnectButton = createButton("Connect to Serial");
   mConnectButton.position(0, 0);
-  mConnectButton.size(mConnectButton.width * 3, mConnectButton.height * 3);
-  mConnectButton.style('font-size', '24px');
+  mConnectButton.size(mConnectButton.width, mConnectButton.height);
+  mConnectButton.style('font-size', ' 12px');
   mConnectButton.mousePressed(connect);
 
 }
@@ -118,6 +119,7 @@ function draw() {
 //circle(width * 4 / 5, height / 6, 300);
 //}
 
+// draw spinning record
 function recordSpin() { 
   let recordX = -width / 5;
   let recordY = 0;
@@ -137,6 +139,8 @@ function recordSpin() {
 
 }
 
+
+// draw record needle
 function recordNeedle() { // **FIX DIMENSIONS
 texture(chromeImg);
 stroke(255);
@@ -144,18 +148,27 @@ strokeWeight(6);
 push();
 translate( width / 10, - height / 5);
 
-if (!isPlaying) { // ** MAKE STATEMENT FOR "NOT PLAYING"
+if (!isPlaying) {
   rotate(-45);
 }
 
 circle(0, 0, 200);
-
 
 stroke(255);
 strokeWeight(20);
 line(0, 0, - 600, 600);
 pop();
 }
+
+// moving stars across the screen
+//class starParticles {
+
+ // constructor(){
+ //   this.x = random(0, width);
+ //   this.y = random(0, height);
+ //   this.xSpeed = random()
+ // }
+//}
 
 // function for audio visualizer
 
