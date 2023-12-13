@@ -25,9 +25,10 @@ recordImg = loadImage('recordImg.jpg'); // preload images
 chromeImg = loadImage('chromeImg.png');
 skipImg = loadImage('skipbutton.png');
 
-songs[0] = loadSound("./walk.mp3"); // preload music
+songs[0] = loadSound("./tainted.mp3"); // preload music
 songs[1] = loadSound("./watching.mp3");
 songs[2] = loadSound("./flashlight.mp3");
+songs[3] = loadSound("./sweetdreams.mp3");
 
 recordScratch = loadSound("./recordScratch.mp3");
 }
@@ -101,15 +102,21 @@ function draw() {
     prev[1] = vals[1];
 
     readyToRead = true;
+
    }
 
 // code for song change button feature and scratch sound
 
   recordSpin();
   recordNeedle();
+  //skipButton();
 
 }
 
+//function skipButton() {
+//texture(skipButton);
+//circle(width * 4 / 5, height / 6, 300);
+//}
 
 function recordSpin() { 
   let recordX = -width / 5;
