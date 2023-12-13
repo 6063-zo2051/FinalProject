@@ -34,7 +34,7 @@ function setup() {
   isPlaying = false;
 
   mConnectButton = createButton("Connect to Serial");
-  mConnectButton.position(width / 2, height / 2);
+  mConnectButton.position(0, 0);
   mConnectButton.size(mConnectButton.width * 3, mConnectButton.height * 3);
   mConnectButton.style('font-size', '24px');
   mConnectButton.mousePressed(connect);
@@ -56,12 +56,14 @@ function draw() {
 
     if (vals[0] == "1" && prev[0] == "0") {
       // start song
+      // turn on green LED
       isPlaying = true;
       print("start");
     }
 
     if (vals[1] == "1" && prev[1] == "0") {
       // stop song
+      // turn on red LED
       isPlaying = false;
       print("stop");
     }
@@ -71,6 +73,8 @@ function draw() {
 
     readyToRead = true;
    }
+
+// code for song change button feature and scratch sound
 
   recordSpin();
   recordNeedle();
@@ -91,7 +95,7 @@ function recordSpin() {
   let minDim = min(width, height);
   circle( 0, 0, minDim / 1.5);
   fill(0);
-  circle(0, 0, minDim / 20);
+  circle(0, 0, minDim / 10);
   angle += 1;
   pop();
 
@@ -116,3 +120,7 @@ strokeWeight(20);
 line(0, 0, - 600, 600);
 pop();
 }
+
+// function for audio visualizer
+
+// function for moving lights
