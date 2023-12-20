@@ -52,7 +52,9 @@ For the final prpoject, I decided to create a DJ set which could be controlled u
 I think this project interested me as it resonated with my culture. My parents are both children of the 80's, and music is a large part of our cultural history and their youth in general. I wanted to connect to their experiences.
 
 ### FSM and Circuit Diagram
+ ![Finite State Machine for Pause and Play Buttons](./fsmbuttons.png)
 
+ ![Circuit Diagram for Pause and Play Buttons](./circbuttons.png)
 
 ### External Library
 I used the audio library for my project. Specifically, I used the library to load audio files and hoped to adjust the volume and create an audio visualizer for the song that is playing.
