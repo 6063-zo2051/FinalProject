@@ -16,12 +16,22 @@ let recordImg;
 
 let stars = [];
 
+let amplitude;
+let circleSize;
+
+
+
+
+// connect Arduino
 function connect() {
   mSerial.open(9600);
   readyToRead = true;
 }
 
 
+
+
+//preloads
 function preload() {
 recordImg = loadImage('recordImg.jpg'); // preload images
 chromeImg = loadImage('chromeImg.png');
@@ -32,11 +42,16 @@ songs[1] = loadSound("./watching.mp3");
 songs[2] = loadSound("./flashlight.mp3");
 songs[3] = loadSound("./sweetdreams.mp3");
 
-recordScratch = loadSound("./recordScratch.mp3");
+recordScratch = loadSound("./recordScratch.mp3");// sound effect
 }
 
+
+
+
+
+
 function setup() {
-  createCanvas(800, 700, WEBGL);
+  createCanvas(windowWidth, windowHeight, WEBGL);
   angleMode(DEGREES);
 
   mSerial = createSerial();
@@ -44,8 +59,10 @@ function setup() {
   readyToRead = false;
   isPlaying = false;
 
+  amplitude = new p5.Amplitude();
+
   currentButton = createButton('');
-  currentButton.position(width * 2 / 3, 0);
+  currentButton.position(width / 2 , 0);
   currentButton.size(200, 200);
   currentButton.style('border-radius', '75%');
   currentButton.style('border-width', '0');
@@ -62,8 +79,8 @@ function setup() {
 
   for (let i = 0; i < 50; i++) {
     let star = {
-      x: random(-width, width),
-      y: random(-height, height),
+      x: random(-width/2, width/2),
+      y: random(-height/2, height/2),
       size: random(10, 25),
       color: color(random(0, 255), random(0, 255), random(0, 255)),
       speed: random(1, 3)
@@ -73,17 +90,9 @@ function setup() {
 
 }
 
-function changeSong(){
-  songs[currentSong].stop();
-  recordScratch.play();
-  currentSong++;
 
-  if (currentSong >= songs.length) {
-    currentSong = 0;
-  }
 
-  songs[currentSong].play();
-}
+
 
 function draw() {
   background(0);
@@ -92,10 +101,10 @@ function draw() {
     let star = stars[i];
     star.x -= star.speed;
 
-    if (star.x < -width / 2) {
-      star.x = width / 2;
-      star.y = random(-height / 2, height / 2);
-    }
+   if (star.x < -width / 2) {
+     star.x = width / 2;
+     star.y = random(-height / 2, height / 2);
+     }
 
     image(starImg, star.x, star.y, star.size, star.size);
   
@@ -133,17 +142,45 @@ function draw() {
 
    }
 
-// code for song change button feature and scratch sound
-
   recordSpin();
   recordNeedle();
+
+  let level = amplitude.getLevel();
+  let rectHeight1 = map(level, 0, 1, 0, height);
+  let rectHeight2 = map(level, 0, 1, 0, height);
+  let rectHeight3 = map(level, 0, 1, 0, height);
+
+  fill(255, 0, 0);
+  rect(width * .75, height - rectHeight1, width * .8, rectHeight1);
+  
+  fill(0, 255, 0); 
+  rect(width * .8, height - rectHeight2, width * .85, rectHeight2);
+  
+  fill(0, 0, 255);
+  rect(width * .85, height - rectHeight3, width * .9, rectHeight3);
   
   }
 
-//function skipButton() {
-//texture(skipButton);
-//circle(width * 4 / 5, height / 6, 300);
-//}
+
+
+
+
+  //change song function
+  function changeSong(){
+    songs[currentSong].stop();
+    recordScratch.play();
+    currentSong++;
+  
+    if (currentSong >= songs.length) {
+      currentSong = 0;
+    }
+  
+    songs[currentSong].play();
+  }
+
+
+
+
 
 // draw spinning record
 function recordSpin() { 
@@ -157,7 +194,7 @@ function recordSpin() {
   rotate(angle);
   texture(recordImg);
   let minDim = min(width, height);
-  circle( 0, 0, minDim / 2);
+  circle( 0, 0, width / 1.5);
   fill(0);
   circle(0, 0, minDim / 10);
   angle += 1;
@@ -166,6 +203,10 @@ function recordSpin() {
 }
 
 
+
+
+
+// draw record needle
 function recordNeedle() {
 texture(chromeImg);
 stroke(255);
@@ -177,7 +218,7 @@ if (!isPlaying) {
   rotate(-45);
 }
 
-circle(width / 6, - height / 6, 50);
+circle(width / 6, - height / 6, 50); //
 
 stroke(255);
 strokeWeight(5);
