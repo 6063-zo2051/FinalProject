@@ -14,7 +14,7 @@ This idea consists of two games combined. One game is decorating a Christmas tre
 
 #### Idea 3: Subway Game
 This iddea is a game that challenges the palyer to cross the subway by jumping from car to car. The user can only enter and exit cars through the doors as shown in the image. The cars move across the screen and appear in random order on their tracks. When the player is on the car, their avatar will be shown moving with the train. I am not yet sure how I would like the avatar to look. There is also a feature where the user can ride a rat. I would like for the rat to also move across the screen at random points. Once the player reaches the other side of the racks, possibly a screen with a trophy or reward could popup. I would like to incorporate the Arduino by having 4 buttons that move the avatar forward, back, left, or right upon being clicked.
-![Idea 2: Christmas Game](./finalidea2.JPG)
+![Idea 3: Subway Game](./finalidea2.JPG)
 
 ### Milestone 2 - Due 12/06/23
 
@@ -40,3 +40,20 @@ After Milestone 3, I plan to get feedback from my classmates and friends on how 
 
 #### Relevance to Society
 A recent reading assignment for this course revolved around the topic of media archaeology. I think that this project is very relevent to the subject. Media archaeology shows how technology and media has shaped our society over time. Old school DJ sets took up space and storage. They covered entire tabletops. Nowadays, we can achieve all and more within softwares such as GarageBand and games such as what I have chosen to create for my project.
+
+
+## Milestone 3 - Due 12/20/23
+### Final WriteUp
+
+For the final prpoject, I decided to create a DJ set which could be controlled using the Arduino board. I thought that this would be a great way to combine many of the aspects of the course content into one, and would allow for ample creativity to be applied. In terms of relevence to the course readings, I felt like this related to the topic of media archeology specifically. Media archeology is a field which encompasses how media emerges through examination of the past. Although it pertains more so to tv and film media, I remember a reading about how the use of old telephones required physical infrastructure which took up space, a.k.a pphone lines. I parralleled this to the DJ table. Dj tables used to take up space, covering the entire table.Now, DJ sets exist within software on a computer, and require little physical hardware unless one desires to have it.
+
+![](./olddj1.jpg)
+
+I think this project interested me as it resonated with my culture. My parents are both children of the 80's, and music is a large part of our cultural history and their youth in general. I wanted to connect to their experiences.
+
+### Components
+Componnets used for this project
+
+### User Testing
+User tetsing was conducted through the act of allowing for my classmates and friends to try out my project. All enjoyed it and suggested the addition of features such an additional record to play a second set of songs, as well as more buttons which adjust more features. Overall, feedback was positive and the roject was seen as a fun take on coding.
+
