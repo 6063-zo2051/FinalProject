@@ -17,7 +17,7 @@ let recordImg;
 let stars = [];
 
 let amplitude;
-let circleSize;
+
 
 
 
@@ -123,14 +123,12 @@ function draw() {
 
     if (vals[0] == "1" && prev[0] == "0") {
       songs[currentSong].play();
-      // turn on green LED
       isPlaying = true;
       print("start");
     }
 
     if (vals[1] == "1" && prev[1] == "0") {
       songs[currentSong].stop();
-      // turn on red LED
       isPlaying = false;
       print("stop");
     }
@@ -146,18 +144,9 @@ function draw() {
   recordNeedle();
 
   let level = amplitude.getLevel();
-  let rectHeight1 = map(level, 0, 1, 0, height);
-  let rectHeight2 = map(level, 0, 1, 0, height);
-  let rectHeight3 = map(level, 0, 1, 0, height);
+  let brightness = map(level, 0, 1, 0, 255);
 
-  fill(255, 0, 0);
-  rect(width * .75, height - rectHeight1, width * .8, rectHeight1);
-  
-  fill(0, 255, 0); 
-  rect(width * .8, height - rectHeight2, width * .85, rectHeight2);
-  
-  fill(0, 0, 255);
-  rect(width * .85, height - rectHeight3, width * .9, rectHeight3);
+  mSerial.write(brightness);
   
   }
 

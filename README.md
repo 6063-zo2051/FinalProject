@@ -52,7 +52,9 @@ For the final prpoject, I decided to create a DJ set which could be controlled u
 I think this project interested me as it resonated with my culture. My parents are both children of the 80's, and music is a large part of our cultural history and their youth in general. I wanted to connect to their experiences.
 
 ### Components
-Componnets used for this project
+External components for this project were simple. The Arduino consisted of two buttons which control the start and puase features of the project. Two LEDs were also used to indicate whether the sound is playing or not. I qanted to allow for visualization of the audio using a flickering LED, or by creating a visualizer within the sketch, Unfortunately, I struggled with this code and was unable to achieve the feature by the due date.
+
+In terms of physical building, 
 
 ### User Testing
 User tetsing was conducted through the act of allowing for my classmates and friends to try out my project. All enjoyed it and suggested the addition of features such an additional record to play a second set of songs, as well as more buttons which adjust more features. Overall, feedback was positive and the roject was seen as a fun take on coding.
