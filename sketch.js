@@ -62,8 +62,8 @@ function setup() {
   amplitude = new p5.Amplitude();
 
   currentButton = createButton('');
-  currentButton.position(width / 2 , 0);
-  currentButton.size(200, 200);
+  currentButton.position(width * 2 / 3 , 0);
+  currentButton.size(width / 7, width / 7);
   currentButton.style('border-radius', '75%');
   currentButton.style('border-width', '0');
   currentButton.style('background-size', 'cover');
@@ -173,17 +173,14 @@ function draw() {
 
 // draw spinning record
 function recordSpin() { 
-  let recordX = -width / 5;
-  let recordY = 0;
 
   push();
   stroke(255);
   strokeWeight(4);
-  translate(recordX, recordY);
   rotate(angle);
   texture(recordImg);
   let minDim = min(width, height);
-  circle( 0, 0, width / 1.5);
+  circle( 0, 0, minDim / 1.5);
   fill(0);
   circle(0, 0, minDim / 10);
   angle += 1;
@@ -200,21 +197,14 @@ function recordNeedle() {
 texture(chromeImg);
 stroke(255);
 strokeWeight(3);
-push();
-translate( 0, 0);
 
 if (!isPlaying) {
   rotate(-45);
 }
 
-circle(width / 6, - height / 6, 50); //
+circle(width / 4, - height / 4, 50); //
 
 stroke(255);
 strokeWeight(5);
-line(width / 6, - height / 6, -20, 50);
-pop();
+line(width / 4, - height / 4, 0, 0);
 }
-
-// function for audio visualizer
-
-// function for moving lights
